@@ -1,6 +1,10 @@
 /* Responsividade para tablet e mobile */
 @media (max-width: 991px) {
 
+    .socialLinks{
+        display: none;
+    }
+
     .arrow-down {
         width: 24px;
         height: 24px;
