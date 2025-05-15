@@ -8,24 +8,7 @@
     }
 
     .nova-div {
-        width: 500px;
         height: 700px;
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(200%, -50%);
-        /* Começa fora da tela à direita */
-        background: linear-gradient(to bottom, rgba(56, 55, 55, 0.9), rgb(22, 22, 22));
-        transition: transform 0.5s ease;
-        box-shadow: 0 4px 8px rgba(46, 43, 43, 0.555);
-        border-radius: 3%;
-        z-index: 5000;
-        padding: 20px;
-        color: white;
-        display: none;
-        flex-direction: column;
-        gap: 10px;
-        overflow-y: auto;
     }
 
 
