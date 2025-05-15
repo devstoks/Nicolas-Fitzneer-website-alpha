@@ -9,7 +9,7 @@ html {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.959);
+  background-color: rgba(0, 0, 0, 0.788);
   z-index: 2000;
   /* abaixo da nova-div */
   display: none;
