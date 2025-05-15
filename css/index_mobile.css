@@ -19,6 +19,7 @@
         -webkit-overflow-scrolling: touch;
         height: 630px;
         margin-top: 10px;
+        width: 90%;
     }
 
     #mensagem {
