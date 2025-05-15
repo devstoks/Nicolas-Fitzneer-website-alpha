@@ -4,10 +4,7 @@
     .nova-div {
         overflow-y: auto;
         -webkit-overflow-scrolling: touch;
-        height: 100vh;
-        /* 100% da viewport para garantir altura total */
-        width: 100%;
-        /* não coloque overflow: hidden aqui */
+        height: 630px;
     }
 
 
@@ -16,7 +13,7 @@
         display: flex;
         flex-direction: column;
         gap: 5px;
-        margin-top: 10px;
+        margin-top: -10px;
     }
 
     .socialLinks {
