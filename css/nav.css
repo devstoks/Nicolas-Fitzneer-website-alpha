@@ -1,0 +1,125 @@
+/* fonte da nav */
+
+@font-face {
+    font-family: 'Heavitas';
+    src: url('../fonts/butler/Butler/Butler_Bold.otf') format('opentype');
+}
+
+/* Título desktop */
+#link-nav {
+    font-family: 'Heavitas', sans-serif;
+    font-size: 30px;
+    text-decoration: none;
+    color: white;
+    margin-left: 20px;
+}
+
+/* Mobile e Tablet (todas as orientações) */
+@media (max-width: 991.98px) {
+    nav.navbar {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        min-height: 70px;
+    }
+
+    .navbar-toggler {
+        height: 40px;
+        display: flex;
+        align-items: center;
+    }
+
+    /* Ajuste fino do título central no mobile/tablet */
+    #link-nav-mobile {
+        top: 55%;
+        /* centraliza melhor verticalmente */
+        font-family: 'Heavitas', sans-serif;
+        font-size: 30px;
+        text-decoration: none;
+        color: white;
+    }
+
+    /* Garante que o título não seja sobreposto pelo hamburguer */
+    .navbar-brand {
+        font-size: 1.5rem;
+        text-align: center;
+        width: 100%;
+    }
+
+    /* Hamburguer branco */
+    .navbar-toggler {
+        border-color: white;
+    }
+
+    .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    }
+
+}
+
+/* Ajuste fino para tablets (paisagem ou retrato) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    nav.navbar {
+        padding-top: 16px;
+        padding-bottom: 16px;
+        min-height: 80px;
+    }
+
+    .navbar-brand {
+        font-size: 1.7rem;
+    }
+
+    .navbar-toggler {
+        height: 45px;
+        width: 45px;
+        padding: 0;
+        margin-right: 10px;
+    }
+}
+
+
+/* configuração padrão de animação*/
+nav {
+    background-color: transparent;
+    transition: background-color 0.3s ease, transform 0.5s ease, opacity 0.5s ease;
+    background-color: rgba(0, 0, 0, 0.726);
+    color: white;
+}
+
+/* Remove fundo branco padrão do botão hamburguer */
+.navbar-toggler {
+    border: none;
+}
+
+nav.scrolled {
+    background-color: rgba(169, 169, 169, 0.9);
+    /* Cinza subindo */
+}
+
+nav.transparent {
+    background-color: rgba(0, 0, 0, 0.637);
+}
+
+nav.hidden {
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.navbar-nav {
+    margin-left: auto;
+    margin-right: 0;
+}
+
+#inicio {
+    transition: background-color 0.3s ease;
+}
+
+#inicio.cinza {
+    background-color: rgba(169, 169, 169, 1);
+    /* Cor cinza */
+}
+
+#inicio.preto {
+    background-color: rgba(0, 0, 0, 0.664);
+    /* Cor preta */
+}

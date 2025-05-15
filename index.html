@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nicolas Fitzner</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- Link para o FontAwesome Light via CDN (versão 6) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0-beta3/css/all.css" />
+
+    <!--Meus links-->
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/categorias.css">
+    <link rel="stylesheet" href="css/popup.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/index_mobile.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body,
+        .cursor {
+            font-family: Arial, sans-serif;
+            background-color: black;
+        }
+
+        .no-cursor {
+            cursor: none !important;
+        }
+
+        .content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .nav-item .nav-link:hover {
+            color: gray !important;
+        }
+
+        #isombra-transition img {
+            width: 100%;
+            display: block;
+            height: 100vh;
+        }
+
+        input.erro,
+        textarea.erro {
+            border: 2px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg fixed-top" id="navbar">
+        <div class="container-fluid position-relative">
+
+            <!-- Título esquerdo (desktop) -->
+            <a href="index.html" id="link-nav" class="navbar-brand d-none d-lg-block" translate="no">Fitzner</a>
+
+            <!-- Título central (mobile/tablet) -->
+            <div class="position-absolute top-50 start-50 translate-middle d-lg-none">
+                <a href="index.html" id="link-nav-mobile" class="navbar-brand" translate="no">Fitzner</a>
+            </div>
+
+            <!-- Menu (visível sempre no desktop, colapsável no mobile) -->
+            <div class="collapse navbar-collapse justify-content-end" id="navbarContent">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a onclick="formularioContato()" class="nav-link text-light" style="cursor:pointer;">Contato</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#aboutme" class="nav-link text-light">Sobre mim</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- Barra fixa inferior -->
+    <nav class="bottom-nav">
+        <a href="#" class="nav-item" id="btn-props"><i class="fa-light fa-pen"></i></a>
+        <a href="#" class="nav-item" id="btn-work"><i class="fa-light fa-briefcase"></i></a>
+        <a href="#" class="nav-item active" id="btn-personal"><i class="fa-light fa-house"></i></a>
+        <a href="#" class="nav-item" id="btn-envelope"><i class="fa-light fa-envelope"></i></a>
+        <a href="#aboutme" class="nav-item"><i class="fa-light fa-user"></i></a>
+    </nav>
+
+    <section id="inicio">
+        <!--Imagem incial-->
+        <div id="background-container">
+            <!--Sombra de transição-->
+            <div id="isombra-transition"><img src="source/Inicial/Banner/sombra.png" alt=""></div>
+        </div>
+
+        <!--Texto inicia-->
+        <div id="info-container">
+            <div class="titulo-centro">
+                <h1 translate="no">Nicolas Fitzner</h1>
+                <h4 translate="no">Portfolio</h4>
+            </div>
+            <div class="arrow-down" id="arrow-down"></div>
+        </div>
+    </section>
+    <main>
+
+        <!-- Layout original para desktop -->
+        <div class="cartas-container d-md-flex">
+            <div class="card carta-1"></div>
+            <div class="card carta-2"></div>
+            <div class="card carta-3"></div>
+        </div>
+
+        <div id="icategorias">
+            <h1>Personal</h1>
+        </div>
+
+        <!-- Galeria -->
+        <section id="igaleria" class="container-fluid d-flex flex-column justify-content-center align-items-center">
+            <!-- Galeria de Pessoal -->
+            <div id="ipessoal" class="esconder">
+                <div id="rosa" class="bloco imagem-clicavel"></div>
+                <div id="azul" class="bloco imagem-clicavel"></div>
+                <div id="cinza" class="bloco imagem-clicavel"></div>
+                <div id="branco" class="bloco imagem-clicavel"></div>
+                <div id="amarelo" class="bloco imagem-clicavel"></div>
+            </div>
+
+            <!-- Galeria de Work -->
+            <div id="iwork" class="esconder">
+                <div id="trabalho1" class="bloco imagem-clicavel"></div>
+                <div id="trabalho2" class="bloco imagem-clicavel"></div>
+                <div id="trabalho3" class="bloco imagem-clicavel"></div>
+                <div id="trabalho4" class="bloco imagem-clicavel"></div>
+            </div>
+
+            <!-- Galeria de Props -->
+            <div id="iprops" class="esconder">
+                <div id="props1" class="bloco imagem-clicavel"></div>
+                <div id="props2" class="bloco imagem-clicavel"></div>
+                <div id="props3" class="bloco imagem-clicavel"></div>
+                <div id="props4" class="bloco imagem-clicavel"></div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Popup -->
+    <div id="popup-imagem">
+        <button id="botao-fechar" onclick="fecharImagem()">×</button>
+        <img id="imagem-grande" src="">
+    </div>
+
+
+    <!-- Ícone de rosto no canto inferior direito -->
+    <div class="icone-container" id="icone">
+        <span></span>
+    </div>
+
+    <!-- Fundo escuro que bloqueia o resto da tela -->
+    <div class="overlay" id="overlay"></div>
+    <!-- Caixa que aparece ao clicar no ícone -->
+    <div class="nova-div" id="novaDiv">
+        <h2 class="text-white text-center">Contato</h2>
+        <p class="text-white text-center">Entraremos em contato a partir destas informações</p>
+
+        <form id="meuFormulario" action="https://formsubmit.co/nicolasfitzner8@gmail.com" method="POST">
+            <label for="iformNome">Nome:</label>
+            <input type="text" name="nome" required id="iformNome" onkeyup="formatarNome()" onblur="formatarNome()">
+
+            <label for="iformTelefone">Telefone:</label>
+            <input type="text" name="telefone" required id="iformTelefone" onkeyup="formatarTelefone()"
+                onblur="formatarTelefone()">
+
+            <label for="iformEmail">Email:</label>
+            <input type="email" name="email" required id="iformEmail" onkeyup="validarEmail()" onblur="validarEmail()">
+
+            <label for="mensagem">Mensagem:</label>
+            <textarea name="mensagem" required id="mensagem" onkeyup="validarMensagem()"
+                onblur="validarMensagem()"></textarea>
+
+            <p id="iformErro" style="color: red; font-weight: bold;"></p>
+
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="https://seusite.com/obrigado.html">
+
+            <button type="button" onclick="enviarFormulario()">Enviar</button>
+        </form>
+        <p id="mensagemErro" style="color: red;"></p>
+
+        <div class="socialLinks">
+            <a href="https://www.instagram.com/nicolas_fitzner/" class="socialIcon instagram" target="_blank"
+                rel="noopener noreferrer"></a>
+            <a href="https://x.com/fitneeez" class="socialIcon twitter" target="_blank" rel="noopener noreferrer"></a>
+            <a href="https://www.artstation.com/nicolasfitzner" class="socialIcon artstation" target="_blank"
+                rel="noopener noreferrer"></a>
+        </div>
+    </div>
+
+    <section id="aboutme">
+        <div class="about-content">
+            <div class="profile-container">
+                <div class="profile-pic"></div>
+            </div>
+            <div class="info-container">
+                <div class="about-title">
+                    <h2 class="name">Sobre Mim</h2>
+                </div>
+                <p class="description">Eu me chamo Nicolas Fitzner – artista e contador de histórias visuais.<br>
+                    Atualmente estou estudando para me tornar um concept artist e explorando o mundo do desenvolvimento
+                    visual.<br><br>
+                    Obrigado pela visita!</p>
+            </div>
+        </div>
+
+        <div class="socialLinks bottom">
+            <a href="https://www.instagram.com/nicolas_fitzner/" class="socialIcon instagram" target="_blank"
+                rel="noopener noreferrer"></a>
+            <a href="https://x.com/fitneeez" class="socialIcon twitter" target="_blank" rel="noopener noreferrer"></a>
+            <a href="https://www.artstation.com/nicolasfitzner" class="socialIcon artstation" target="_blank"
+                rel="noopener noreferrer"></a>
+        </div>
+        <footer class="copyright">© 2025 Matheus Camilo. Todos os direitos reservados.</footer>
+    </section>
+
+
+    <!--Scripts importados-->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+        crossorigin="anonymous"></script>
+
+    <!-- Scripts externos importantes para a página -->
+    <!--Mostar imagem e zoom-->
+    <script src="js/popup.js"></script>
+    <!--Rostinho no canto config-->
+    <script src="js/rosto_canto.js"></script>
+    <!--seta para scroll baixo-->
+    <script src="js/setinha.js"></script>
+    <!--Tratamento aba contato-->
+    <script src="js/tratamento_contato.js"></script>
+    <!--Cartinhas config-->
+    <script src="js/cartinha.js"></script>
+    <!--Nav-->
+    <script src="js/nav.js"></script>
+    <!--Nav Botton-->
+    <script src="js/nav_botton.js"></script>
+</body>
+
+</html>
