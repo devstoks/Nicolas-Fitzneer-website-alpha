@@ -3,7 +3,6 @@ window.addEventListener('DOMContentLoaded', () => {
   const span = iconeContainer.querySelector('span');
   const novaDiv = document.getElementById('novaDiv');
   const overlay = document.getElementById('overlay');
-
   const btnEnvelope = document.getElementById('btn-envelope');
   const navItems = document.querySelectorAll('.nav-item');
 
@@ -26,67 +25,51 @@ window.addEventListener('DOMContentLoaded', () => {
     }, 10);
     overlay.classList.add('visivel');
     document.body.style.overflow = 'hidden';
-    document.documentElement.style.overflow = 'hidden';  // bloqueia também o html
+    document.documentElement.style.overflow = 'hidden';
   }
 
   function fecharNovaDiv() {
     novaDiv.classList.remove('visivel');
     overlay.classList.remove('visivel');
-    document.body.style.overflow = '';
     setTimeout(() => {
       novaDiv.style.display = 'none';
     }, 500);
-
     document.body.style.overflow = '';
-    document.documentElement.style.overflow = '';  // libera o html
-
+    document.documentElement.style.overflow = '';
   }
 
-  // Função para abrir ou fechar e gerenciar classe active do botão envelope
   btnEnvelope.addEventListener('click', (e) => {
     e.preventDefault();
     const aberto = novaDiv.classList.contains('visivel');
 
     if (!aberto) {
-      // Abre o formulário
       abrirNovaDiv();
-      // Remove active de todos os itens nav
       navItems.forEach(item => item.classList.remove('active'));
-      // Adiciona active no envelope
       btnEnvelope.classList.add('active');
     } else {
-      // Fecha o formulário
       fecharNovaDiv();
-      // Remove active do envelope
       btnEnvelope.classList.remove('active');
     }
   });
 
-  // Quando clicar em outros itens da nav, remove active do envelope
   navItems.forEach(item => {
     if (item !== btnEnvelope) {
       item.addEventListener('click', () => {
-        // Fecha a div e overlay se estiver aberto
         if (novaDiv.classList.contains('visivel')) {
           fecharNovaDiv();
         }
-        // Remove active do envelope e deste item antigo
         btnEnvelope.classList.remove('active');
-
-        // Remove active de todos e coloca só no clicado
         navItems.forEach(i => i.classList.remove('active'));
         item.classList.add('active');
       });
     }
   });
 
-  // Clicar no overlay fecha tudo e remove active do envelope
   overlay.addEventListener('click', () => {
     fecharNovaDiv();
     btnEnvelope.classList.remove('active');
   });
 
-  // Clique no iconeContainer também pode abrir/fechar a div (se quiser manter)
   iconeContainer.addEventListener('click', () => {
     if (!novaDiv.classList.contains('visivel')) {
       abrirNovaDiv();
@@ -97,4 +80,20 @@ window.addEventListener('DOMContentLoaded', () => {
       btnEnvelope.classList.remove('active');
     }
   });
+
+  // Tornar função acessível globalmente para o link "Contato"
+  window.formularioContato = function () {
+    abrirNovaDiv();
+
+    navItems.forEach(i => i.classList.remove('active'));
+
+    // Ativa o link "Contato" se ele tiver a classe nav-item
+    const contatoLink = document.querySelector('.nav-link.text-light');
+    if (contatoLink) {
+      contatoLink.classList.add('active');
+    }
+
+    // Também ativa o btn-envelope se quiser
+    btnEnvelope.classList.add('active');
+  };
 });

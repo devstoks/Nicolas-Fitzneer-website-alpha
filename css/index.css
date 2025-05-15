@@ -483,11 +483,6 @@ html {
 
 /* === Responsivo para Tablet (largura até 1024px) === */
 @media (max-width: 1024px) {
-  .nova-div {
-    width: 80%;
-    height: 90%;
-    padding: 15px;
-  }
 
   .icone-container {
     width: 120px;
@@ -520,12 +515,6 @@ html {
 
 /* === Responsivo para Mobile (largura até 768px) === */
 @media (max-width: 768px) {
-  .nova-div {
-    width: 90%;
-    height: 90%;
-    padding: 10px;
-    border-radius: 10px;
-  }
 
   .icone-container {
     width: 90px;
@@ -563,11 +552,6 @@ html {
   .about-content {
     flex-direction: column;
     gap: 20px;
-  }
-
-  .socialIcon {
-    width: 30px !important;
-    height: 30px !important;
   }
 
   .arrow-down {
