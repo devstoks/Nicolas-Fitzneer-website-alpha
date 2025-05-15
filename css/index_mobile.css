@@ -4,7 +4,8 @@
     .nova-div {
         overflow-y: auto; /* Permite rolar só a div */
         -webkit-overflow-scrolling: touch; /* melhor scroll no iOS */
-        height: 500;
+        height: 600px;
+          overflow: hidden;
     }
 
     .nova-div form {
