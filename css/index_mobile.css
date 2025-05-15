@@ -1,10 +1,27 @@
 /* Responsividade para tablet e mobile */
 @media (max-width: 991px) {
 
+    .nova-div button {
+        margin-top: 5px;
+        padding: 10px;
+        background-color: #ffffff;
+        color: #000;
+        font-weight: bold;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+    }
+
+
     .nova-div {
         overflow-y: auto;
         -webkit-overflow-scrolling: touch;
         height: 630px;
+    }
+
+    #mensagem {
+        height: 110px;
     }
 
     .nova-div h2 {
