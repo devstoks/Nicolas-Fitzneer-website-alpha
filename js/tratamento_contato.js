@@ -1,7 +1,7 @@
   function mostrarErro(texto, campo) {
     document.getElementById("iformErro").textContent = texto;
     campo.classList.add("erro");
-    campo.focus();
+    //campo.focus();
   }
 
   function limparErro(campo) {
