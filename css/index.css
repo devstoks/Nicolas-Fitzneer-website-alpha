@@ -22,10 +22,11 @@ html {
 /* ícone canto direito(cabeça) */
 .icone-container {
   position: fixed;
-  right: -10px;
-  bottom: -45px;
-  width: 180px;
-  height: 180px;
+  right: 20px;
+  bottom: -25px;
+  width: 130px;
+  height: 130px;
+  scale: 1.4;
   background: url('../source/Sobre-mim/cabeca2.png') no-repeat center center;
   background-size: cover;
   border-radius: 50%;
@@ -56,10 +57,13 @@ html {
 }
 
 #icone span {
-  width: 100px;
-  height: 100px;
+  width: 130px;
+  height: 110px;
   cursor: pointer;
   display: block;
+  background-color: rgba(0, 0, 255, 0);
+  border-radius: 50%;
+  scale: 0.6;
 }
 
 .icone-hover {
@@ -67,7 +71,6 @@ html {
   background-size: cover !important;
   transform: scale(1.1) !important;
   filter: brightness(0.6);
-
 }
 
 /* Div que aparece ao clicar */
