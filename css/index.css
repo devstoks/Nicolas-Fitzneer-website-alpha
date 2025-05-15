@@ -385,8 +385,8 @@ html {
 }
 
 .social-icons img {
-  width: 24px;
-  height: 24px;
+  width: 30px;
+  height: 30px;
   filter: grayscale(100%);
   transition: filter 0.3s;
 }
@@ -444,8 +444,9 @@ html {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  width: 35px;
-  height: 35px;
+  width: 50px;
+  height: 50px;
+  scale: 1.08;
 }
 
 .socialLinks.bottom .socialIcon.artstation {
