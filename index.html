@@ -52,6 +52,10 @@
             height: 100vh;
         }
 
+        #mensagemErro {
+            text-align: center;
+        }
+
         input.erro,
         textarea.erro {
             border: 2px solid red;
@@ -171,6 +175,8 @@
     <div class="nova-div" id="novaDiv">
         <h2 class="text-white text-center">Contato</h2>
         <p class="text-white text-center">Entraremos em contato a partir destas informações</p>
+        <p id="mensagemErro" style="color: red;"></p>
+
 
         <form id="meuFormulario" action="https://formsubmit.co/nicolasfitzner8@gmail.com" method="POST">
             <label for="iformNome">Nome:</label>
@@ -194,7 +200,7 @@
 
             <button type="button" onclick="enviarFormulario()">Enviar</button>
         </form>
-        <p id="mensagemErro" style="color: red;"></p>
+
 
         <div class="socialLinks">
             <a href="https://www.instagram.com/nicolas_fitzner/" class="socialIcon instagram" target="_blank"

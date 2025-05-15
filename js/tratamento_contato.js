@@ -1,5 +1,5 @@
   function mostrarErro(texto, campo) {
-    document.getElementById("iformErro").textContent = texto;
+    document.getElementById("mensagemErro").textContent = texto;
     campo.classList.add("erro");
     //campo.focus();
   }
