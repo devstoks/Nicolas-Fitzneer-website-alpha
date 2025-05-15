@@ -7,12 +7,15 @@
         height: 630px;
     }
 
-
+    .nova-div h2 {
+        font-size: 20px;
+        font-family: 'lemon milk', sans-serif;
+    }
 
     .nova-div form {
         display: flex;
         flex-direction: column;
-        gap: 5px;
+        gap: 4px;
         margin-top: -10px;
     }
 
