@@ -6,7 +6,7 @@
         height: 24px;
         cursor: pointer;
         animation: bounce 1.5s infinite ease-in-out, fadeIn 1s forwards;
-        margin-bottom: 200px;
+        margin-bottom: 180px;
     }
 
     /* Esconde as cartinhas */
