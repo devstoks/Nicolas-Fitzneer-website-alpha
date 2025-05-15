@@ -1,17 +1,18 @@
 /* Responsividade para tablet e mobile */
 @media (max-width: 991px) {
 
+    .nova-div {
+        overflow-y: auto; /* Permite rolar só a div */
+        -webkit-overflow-scrolling: touch; /* melhor scroll no iOS */
+        height: 500;
+    }
+
     .nova-div form {
         display: flex;
         flex-direction: column;
-        gap: 10px;
+        gap: 5px;
+        margin-top: 10px;
     }
-
-    .nova-div {
-        height: 770px;
-    }
-
-
 
     .socialLinks {
         display: none;
