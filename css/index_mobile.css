@@ -3,18 +3,19 @@
 
     .nova-div {
         overflow-y: auto;
-        /* Permite rolar só a div */
         -webkit-overflow-scrolling: touch;
-        /* melhor scroll no iOS */
-        height: 100%;
-        overflow: hidden;
+        height: 100vh;
+        /* 100% da viewport para garantir altura total */
         width: 100%;
+        /* não coloque overflow: hidden aqui */
     }
+
+
 
     .nova-div form {
         display: flex;
         flex-direction: column;
-        gap: 10px;
+        gap: 5px;
         margin-top: 10px;
     }
 

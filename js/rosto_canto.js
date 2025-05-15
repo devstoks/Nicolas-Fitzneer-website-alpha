@@ -26,6 +26,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }, 10);
     overlay.classList.add('visivel');
     document.body.style.overflow = 'hidden';
+    document.documentElement.style.overflow = 'hidden';  // bloqueia também o html
   }
 
   function fecharNovaDiv() {
@@ -35,6 +36,10 @@ window.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
       novaDiv.style.display = 'none';
     }, 500);
+
+    document.body.style.overflow = '';
+    document.documentElement.style.overflow = '';  // libera o html
+
   }
 
   // Função para abrir ou fechar e gerenciar classe active do botão envelope
@@ -59,7 +64,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // Quando clicar em outros itens da nav, remove active do envelope
   navItems.forEach(item => {
-    if(item !== btnEnvelope) {
+    if (item !== btnEnvelope) {
       item.addEventListener('click', () => {
         // Fecha a div e overlay se estiver aberto
         if (novaDiv.classList.contains('visivel')) {
