@@ -18,6 +18,7 @@
         overflow-y: auto;
         -webkit-overflow-scrolling: touch;
         height: 630px;
+        margin-top: 10px;
     }
 
     #mensagem {
