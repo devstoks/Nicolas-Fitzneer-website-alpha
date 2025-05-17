@@ -1,3 +1,21 @@
+@keyframes scaleHead {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+        /* aumenta 30% no meio da animação */
+    }
+}
+
+
+
+
+
+
 .popup-ajuda {
     position: fixed;
     inset: 0;
@@ -57,6 +75,8 @@
     display: block;
     margin: 0 auto;
     scale: 1.9;
+    animation: scaleHead 2s ease-in-out infinite;
+
 }
 
 

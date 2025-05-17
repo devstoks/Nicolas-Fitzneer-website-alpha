@@ -62,6 +62,8 @@
         scale: 1.5;
         width: 70px;
         height: 70px;
+        animation: scaleHead 2s ease-in-out infinite;
+
     }
 
     /* outros */
