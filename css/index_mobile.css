@@ -16,14 +16,11 @@
         max-width: 90%;
         width: 90%;
         max-height: 90vh;
-        overflow-y: auto;
         background-size: cover;
         background-position: center;
-        background-repeat: no-repeat;
-        -webkit-overflow-scrolling: touch;
-
-        max-height: 90vh;
+        background-repeat: no-repeat;        
         overflow-y: auto;
+
     }
 
     .popup-conteudo h2 {
@@ -349,8 +346,6 @@
 
     .popup-conteudo {
         padding: 15px;
-        max-height: 90vh;
-        overflow-y: auto;
     }
 
     .boneco-explica {

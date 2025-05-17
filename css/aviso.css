@@ -90,7 +90,7 @@
     transition: transform 0.2s ease;
     display: block;
     margin: 0 auto;
-    transform: scale(1.9); 
+    scale: 1.9;
     animation: scaleHead 2s ease-in-out infinite;
 
 }
