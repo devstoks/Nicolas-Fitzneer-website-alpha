@@ -69,7 +69,7 @@
     flex-wrap: wrap;
     text-align: left;
     box-shadow: 0 0 20px #0004;
-
+    position: absolute;
     background-size: cover;
     /* Mantém a imagem centralizada */
     background-position: center center;
@@ -99,12 +99,6 @@
 
 #popbotao:hover {
     transform: scale(1.1);
-}
-
-
-.boneco-explica {
-    max-height: 200px;
-    width: auto;
 }
 
 .texto-explica {

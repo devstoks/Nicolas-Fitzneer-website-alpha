@@ -299,16 +299,21 @@
     <script src="js/nav_botton.js"></script>
     <!--Popup de aviso-->
     <script>
-        function fecharPopup() {
-            const popup = document.getElementById('popupAjuda');
-            popup.classList.add('subindo'); // ativa animação
+        const popupAjuda = document.getElementById('popupAjuda');
 
-            popup.addEventListener('animationend', () => {
-                popup.style.display = 'none'; // esconde só depois da animação
-                popup.classList.remove('subindo'); // remove a classe pra poder reusar depois
+        window.addEventListener('load', () => {
+            // Mostra o popup assim que a página terminar de carregar
+            popupAjuda.style.display = 'flex';
+        });
+
+        function fecharPopup() {
+            popupAjuda.classList.add('subindo'); // inicia animação de fechar
+
+            popupAjuda.addEventListener('animationend', () => {
+                popupAjuda.style.display = 'none'; // esconde só depois da animação
+                popupAjuda.classList.remove('subindo'); // limpa a classe pra usar de novo se quiser
             }, { once: true });
         }
-
 
     </script>
 </body>

@@ -56,8 +56,6 @@
         scale: 1.5;
         width: 70px;
         height: 70px;
-        animation: scaleHead 2s ease-in-out infinite;
-
     }
 
     /* outros */
@@ -338,18 +336,6 @@
 
 @media (max-width: 576px) {
 
-
-    .popup-ajuda {
-        position: absolute;
-        inset: 0;
-        background: rgba(0, 0, 0, 0.8);
-        z-index: 9999;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-    }
-
     #popupAjuda h2 {
         font-family: 'lemon milk', sans-serif;
         font-size: 20px;
@@ -357,10 +343,6 @@
 
     .popup-conteudo {
         padding: 15px;
-    }
-
-    .boneco-explica {
-        max-height: 120px;
     }
 
     .texto-explica h2 {
