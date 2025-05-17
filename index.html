@@ -300,8 +300,15 @@
     <!--Popup de aviso-->
     <script>
         function fecharPopup() {
-            document.getElementById('popupAjuda').style.display = 'none';
+            const popup = document.getElementById('popupAjuda');
+            popup.classList.add('subindo'); // ativa animação
+
+            popup.addEventListener('animationend', () => {
+                popup.style.display = 'none'; // esconde só depois da animação
+                popup.classList.remove('subindo'); // remove a classe pra poder reusar depois
+            }, { once: true });
         }
+
 
     </script>
 </body>
