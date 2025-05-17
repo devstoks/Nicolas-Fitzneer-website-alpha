@@ -181,26 +181,27 @@
 
         <form id="meuFormulario" action="https://formsubmit.co/nicolasfitzner8@gmail.com" method="POST">
             <label for="iformNome">Nome:</label>
-            <input type="text" name="nome" required id="iformNome" onkeyup="formatarNome()" onblur="formatarNome()">
+            <input type="text" name="nome" id="iformNome" required onkeyup="preencherNome()" onblur="validarNome()">
 
             <label for="iformTelefone">Telefone:</label>
-            <input type="text" name="telefone" required id="iformTelefone" onkeyup="formatarTelefone()"
-                onblur="formatarTelefone()">
+            <input type="text" name="telefone" id="iformTelefone" required onkeyup="preencherTelefone()"
+                onblur="validarTelefone()">
 
             <label for="iformEmail">Email:</label>
-            <input type="email" name="email" required id="iformEmail" onkeyup="validarEmail()" onblur="validarEmail()">
+            <input type="email" name="email" id="iformEmail" required onkeyup="preencherEmail()"
+                onblur="validarEmail()">
 
             <label for="mensagem">Mensagem:</label>
-            <textarea name="mensagem" required id="mensagem" onkeyup="validarMensagem()"
-                onblur="validarMensagem()"></textarea>
+            <textarea name="mensagem" id="mensagem" required onblur="validarMensagem()"></textarea>
 
-            <p id="iformErro" style="color: red; font-weight: bold;"></p>
+            <p id="ierro" style="color: red; font-weight: bold;"></p>
 
             <input type="hidden" name="_captcha" value="false">
             <input type="hidden" name="_next" value="https://seusite.com/obrigado.html">
 
             <button type="button" onclick="enviarFormulario()">Enviar</button>
         </form>
+
 
 
         <div class="socialLinks">

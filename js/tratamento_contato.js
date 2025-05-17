@@ -1,38 +1,81 @@
-  function mostrarErro(texto, campo) {
-    document.getElementById("mensagemErro").textContent = texto;
-    campo.classList.add("erro");
-    //campo.focus();
+  // Funções utilitárias
+  function limparNumeros(valor) {
+    return valor.replace(/\D/g, "");
   }
 
-  function limparErro(campo) {
-    document.getElementById("iformErro").textContent = "";
-    campo.classList.remove("erro");
+  function limparLetrasComEspaco(valor) {
+    return valor.replace(/[^ a-zA-ZáéíóúãõâêîôûçÁÉÍÓÚÃÕÂÊÎÔÛÇ]/g, "");
   }
 
-  function formatarNome() {
-    const nomeInput = document.getElementById("iformNome");
-    let nome = nomeInput.value.trim();
+  function temLetras(valor) {
+    return /[a-zA-ZáéíóúãõâêîôûçÁÉÍÓÚÃÕÂÊÎÔÛÇ]/.test(valor);
+  }
 
-    if (nome === "") {
-      mostrarErro("O campo nome não pode estar vazio.", nomeInput);
+  function letrasCaixaAlta(valor) {
+    return valor
+      .toLowerCase()
+      .replace(/\b\w/g, letra => letra.toUpperCase())
+      .replace(/\s+/g, " ");
+  }
+
+  // Exibir erro
+  function mostrarErro(input, erroElement, mensagem) {
+    erroElement.textContent = mensagem;
+    erroElement.style.color = "red";
+    input.style.border = "3px solid red";
+  }
+
+  // Esconder erro
+  function esconderErro(input, erroElement) {
+    erroElement.textContent = "";
+    input.style.border = "3px solid green";
+  }
+
+  // ===================== CAMPOS ======================== //
+
+  // Nome
+  function preencherNome() {
+    const input = document.getElementById("iformNome");
+    const erro = document.getElementById("ierro");
+    const nomeOriginal = input.value;
+    const nomeLimpo = limparLetrasComEspaco(nomeOriginal);
+
+    if (!temLetras(nomeLimpo)) {
+      mostrarErro(input, erro, "Digite apenas letras.");
+      input.value = "";
+      return;
+    }
+
+    input.value = nomeLimpo;
+    esconderErro(input, erro);
+  }
+
+  function validarNome() {
+    const input = document.getElementById("iformNome");
+    const erro = document.getElementById("ierro");
+    let nome = input.value.trim();
+
+    if (nome.length < 4) {
+      mostrarErro(input, erro, "Digite pelo menos 4 letras.");
       return false;
     }
 
-    nome = nome.toLowerCase().replace(/\b\w/g, l => l.toUpperCase());
-    nomeInput.value = nome;
-
-    if (nome.length < 3) {
-      mostrarErro("Nome deve ter pelo menos 3 letras.", nomeInput);
+    if (!nome.includes(" ")) {
+      mostrarErro(input, erro, "Inclua o sobrenome.");
       return false;
     }
 
-    limparErro(nomeInput);
+    const nomeFormatado = letrasCaixaAlta(limparLetrasComEspaco(nome));
+    input.value = nomeFormatado;
+    esconderErro(input, erro);
     return true;
   }
 
-  function formatarTelefone() {
-    const telInput = document.getElementById("iformTelefone");
-    let tel = telInput.value.replace(/\D/g, "");
+  // Telefone
+  function preencherTelefone() {
+    const input = document.getElementById("iformTelefone");
+    const erro = document.getElementById("ierro");
+    let tel = limparNumeros(input.value);
 
     if (tel.length > 11) tel = tel.slice(0, 11);
 
@@ -42,48 +85,63 @@
       tel = tel.replace(/(\d{2})(\d{4})(\d{4})/, "($1) $2-$3");
     }
 
-    telInput.value = tel;
+    input.value = tel;
+    esconderErro(input, erro);
+  }
 
-    if (telInput.value.length < 14) {
-      mostrarErro("Telefone incompleto.", telInput);
+  function validarTelefone() {
+    const input = document.getElementById("iformTelefone");
+    const erro = document.getElementById("ierro");
+
+    if (input.value.length < 14) {
+      mostrarErro(input, erro, "Telefone incompleto.");
       return false;
     }
 
-    limparErro(telInput);
+    esconderErro(input, erro);
     return true;
+  }
+
+  // Email
+  function preencherEmail() {
+    const input = document.getElementById("iformEmail");
+    input.value = input.value.trim().toLowerCase();
   }
 
   function validarEmail() {
-    const emailInput = document.getElementById("iformEmail");
-    const email = emailInput.value.trim().toLowerCase();
-    const regex = /^[\w.-]+@[\w.-]+\.\w+$/;
-
-    emailInput.value = email;
+    const input = document.getElementById("iformEmail");
+    const erro = document.getElementById("ierro");
+    const email = input.value;
+    const regex = /^[\w.-]+@[\w.-]+\.\w{2,}$/;
 
     if (!regex.test(email)) {
-      mostrarErro("Email inválido.", emailInput);
+      mostrarErro(input, erro, "Email inválido.");
       return false;
     }
 
-    limparErro(emailInput);
+    esconderErro(input, erro);
     return true;
   }
 
+  // Mensagem
   function validarMensagem() {
-    const msgInput = document.getElementById("mensagem");
+    const input = document.getElementById("mensagem");
+    const erro = document.getElementById("ierro");
 
-    if (msgInput.value.trim().length === 0) {
-      mostrarErro("Mensagem não pode estar vazia.", msgInput);
+    if (input.value.trim().length === 0) {
+      mostrarErro(input, erro, "Mensagem não pode estar vazia.");
       return false;
     }
 
-    limparErro(msgInput);
+    esconderErro(input, erro);
     return true;
   }
+
+  // ===================== ENVIO FINAL ======================== //
 
   function enviarFormulario() {
-    const nomeOk = formatarNome();
-    const telefoneOk = formatarTelefone();
+    const nomeOk = validarNome();
+    const telefoneOk = validarTelefone();
     const emailOk = validarEmail();
     const mensagemOk = validarMensagem();
 
