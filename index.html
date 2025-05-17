@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/index_mobile.css">
-
+    <link rel="stylesheet" href="css/aviso.css">
     <style>
         * {
             margin: 0;
@@ -99,6 +99,26 @@
         <a href="#" class="nav-item" id="btn-envelope"><i class="fa-light fa-envelope"></i></a>
         <a href="#aboutme" class="nav-item"><i class="fa-light fa-user"></i></a>
     </nav>
+
+
+    <!-- Popup de aviso -->
+
+    <div class="popup-ajuda" id="popupAjuda">
+        <div class="popup-conteudo">
+            <div class="texto-explica">
+                <h2>Como usar o site?</h2>
+                <ul>
+                    <li>🃏 Use as <strong>cartinhas</strong> para mudar de categoria.</li>
+                    <li>🧠 Clique na <strong>cabeça</strong> para abrir o formulário.</li>
+                    <li>🖼️ Clique na imagem para <strong>ver ela inteira</strong>.</li>
+                    <li>🔍 Com o zoom ativado, <strong>arraste a imagem</strong> livremente.</li>
+                </ul>
+                <button onclick="fecharPopup()" id="popbotao" aria-label="Entendi!"></button>
+            </div>
+        </div>
+    </div>
+
+
 
     <section id="inicio">
         <!--Imagem incial-->
@@ -264,6 +284,13 @@
     <script src="js/nav.js"></script>
     <!--Nav Botton-->
     <script src="js/nav_botton.js"></script>
+    <!--Popup de aviso-->
+    <script>
+        function fecharPopup() {
+            document.getElementById('popupAjuda').style.display = 'none';
+        }
+
+    </script>
 </body>
 
 </html>

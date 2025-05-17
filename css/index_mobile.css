@@ -1,6 +1,65 @@
 /* Responsividade para tablet e mobile */
 @media (max-width: 991px) {
 
+    /* POP UP */
+
+
+
+    .popup-conteudo {
+        flex-direction: column;
+        padding: 20px;
+        max-width: 90%;
+        width: 90%;
+        max-height: 90vh;
+        overflow-y: auto;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        -webkit-overflow-scrolling: touch;
+
+        /* ⬅ libera altura */
+        max-height: none;
+        /* ⬅ remove o scroll */
+        overflow: visible;
+    }
+
+    .popup-conteudo h2 {
+        font-size: 24px;
+        text-align: center;
+    }
+
+    .boneco-explica {
+        max-height: 140px;
+        width: auto;
+        margin-bottom: 20px;
+    }
+
+    .texto-explica {
+        width: 100%;
+        text-align: center;
+    }
+
+    .texto-explica h2 {
+        font-size: 1.3rem;
+    }
+
+    .texto-explica li {
+        font-size: 1rem;
+    }
+
+    .texto-explica button {
+        width: 100%;
+        padding: 12px;
+        font-size: 1rem;
+    }
+
+    #popbotao {
+        scale: 1.5;
+        width: 70px;
+        height: 70px;
+    }
+
+    /* outros */
 
     #icategorias {
         width: 100%;
@@ -277,6 +336,40 @@
 }
 
 @media (max-width: 576px) {
+
+    #popupAjuda h2 {
+        font-family: 'lemon milk', sans-serif;
+        font-size: 20px;
+    }
+
+    .popup-conteudo {
+        padding: 15px;
+        max-width: 95%;
+        width: 95%;
+    }
+
+    .boneco-explica {
+        max-height: 120px;
+    }
+
+    .texto-explica h2 {
+        font-size: 1.1rem;
+    }
+
+    .texto-explica li {
+        font-size: 0.95rem;
+    }
+
+    .texto-explica button {
+        font-size: 0.95rem;
+        padding: 10px;
+    }
+
+    #popbotao {
+        scale: 1.3;
+        width: 60px;
+        height: 60px;
+    }
 
     /* Ajusta o título da galeria */
     #icategorias h1 {
