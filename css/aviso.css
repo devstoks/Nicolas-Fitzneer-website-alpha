@@ -27,7 +27,7 @@
 }
 
 #popupAjuda.subindo {
-    animation: subirSumir 2s forwards;
+    animation: subirSumir 2s ease-in-out;
 }
 
 
@@ -90,7 +90,7 @@
     transition: transform 0.2s ease;
     display: block;
     margin: 0 auto;
-    scale: 1.9;
+    transform: scale(1.9); 
     animation: scaleHead 2s ease-in-out infinite;
 
 }
