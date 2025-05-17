@@ -34,7 +34,7 @@
 
 
 .popup-ajuda {
-    position: absolute;
+    position: fixed;
     inset: 0;
     background: rgba(0, 0, 0, 0.8);
     z-index: 9999;
@@ -69,7 +69,7 @@
     flex-wrap: wrap;
     text-align: left;
     box-shadow: 0 0 20px #0004;
-    position: absolute;
+    position: fixed;
     background-size: cover;
     /* Mantém a imagem centralizada */
     background-position: center center;
@@ -78,6 +78,7 @@
 
 .popup-conteudo ul {
     list-style-type: none;
+        text-align: center;
 }
 
 #popbotao {
