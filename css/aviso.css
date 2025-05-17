@@ -39,7 +39,10 @@
     /* Mantém a imagem centralizada */
     background-position: center center;
     background-image: url('../source/Categorias/papel.jpg');
+}
 
+.popup-conteudo ul {
+    list-style-type: none;
 }
 
 #popbotao {
