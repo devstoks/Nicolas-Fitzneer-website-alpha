@@ -1,4 +1,30 @@
+@keyframes scaleHead {
 
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+        /* aumenta 30% no meio da animação */
+    }
+}
+
+
+@keyframes subirSumir {
+    0% {
+        transform: translateY(0);
+        background: rgba(0, 0, 0, 0.8);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-150%);
+        background: rgba(0, 0, 0, 0);
+        opacity: 0;
+    }
+}
 
 #popupAjuda.subindo {
     animation: subirSumir 2s ease-in-out;
@@ -7,7 +33,7 @@
 
 
 .popup-ajuda {
-    position: fixed;
+    position: absolute;
     inset: 0;
     background: rgba(0, 0, 0, 0.8);
     z-index: 9999;
