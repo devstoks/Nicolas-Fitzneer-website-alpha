@@ -103,6 +103,33 @@
 
     <!-- Popup de aviso -->
 
+    <div class="popup-ajuda" id="popupAjuda">
+        <div class="popup-conteudo">
+            <div class="texto-explica">
+                <h2>Como usar o site?</h2>
+                <div class="aviso-desktop">
+                    <ul>
+                        <li>🃏 Use as <strong>cartinhas</strong> para mudar de categoria.</li>
+                        <li>🧠 Clique na <strong>cabeça</strong> para abrir o formulário.</li>
+                        <li>🖼️ Clique na imagem para <strong>ver ela inteira</strong>.</li>
+                        <li>🔍 Com o zoom ativado, <strong>arraste a imagem</strong> livremente.</li>
+                    </ul>
+                </div>
+
+                <div class="aviso-mobile">
+                    <ul>
+                        <li>🔍 Utilize a <strong>barra inferior</strong> para navegar entre as categorias.</li>
+                        <li>📂 Toque nas <strong>imagens</strong> para ampliar e visualizar em detalhe.</li>
+                        <li>✉️ Utilize o <strong>formulário</strong> para entrar em contato conosco.</li>
+                        <li>🔗 Confira nossas redes sociais na seção <strong>"Sobre mim"</strong>.</li>
+                    </ul>
+                </div>
+
+
+                <button onclick="fecharPopup()" id="popbotao" aria-label="Entendi!"></button>
+            </div>
+        </div>
+    </div>
 
 
 
@@ -272,16 +299,6 @@
     <script src="js/nav_botton.js"></script>
     <!--Popup de aviso-->
     <script>
-        function fecharPopup() {
-            const popup = document.getElementById('popupAjuda');
-            popup.classList.add('subindo'); // ativa animação
-
-            popup.addEventListener('animationend', () => {
-                popup.style.display = 'none'; // esconde só depois da animação
-                popup.classList.remove('subindo'); // remove a classe pra poder reusar depois
-            }, { once: true });
-        }
-
 
     </script>
 </body>
