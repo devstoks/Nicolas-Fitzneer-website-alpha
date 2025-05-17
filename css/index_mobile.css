@@ -2,8 +2,13 @@
 @media (max-width: 991px) {
 
     /* POP UP */
+    .aviso-desktop {
+        display: none !important;
+    }
 
-
+    .aviso-mobile {
+        display: block !important;
+    }
 
     .popup-conteudo {
         flex-direction: column;

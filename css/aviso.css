@@ -9,6 +9,14 @@
 
 }
 
+.aviso-mobile {
+    display: none;
+}
+
+.aviso-desktop {
+    display: block;
+}
+
 
 #popupAjuda h2 {
     font-family: 'lemon milk', sans-serif;
